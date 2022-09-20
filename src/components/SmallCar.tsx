@@ -18,10 +18,11 @@ export default function SmallCar({
   const { removeCar, balance, setBalance } = useContext(AppContext);
 
   return (
-    <div>
-      <h1>SCar</h1>
-      <p>Time IN : {format(new Date(timeIn), dateAndTimeFormat)} </p>
+    <div className="small-car">
+      <p>Time in:</p>
+      <p>{format(new Date(timeIn), dateAndTimeFormat)}</p>
       <button
+        className="remove-btn"
         onClick={() => {
           removeCar(parkingNumber);
           setBalance(balance + computeParkingFee(timeIn, parkingSize));

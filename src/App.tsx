@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import "./App.css";
+import "./App.scss";
 import EntranceAndExitPoints from "./components/EntranceAndExitPoints";
 import LargeParkingLot from "./components/LargeParkingLot";
 import MediumParkingLot from "./components/MediumParkingLot";
@@ -13,12 +13,15 @@ function App() {
   return (
     <div className="App">
       <EntranceAndExitPoints />
-      <ParkingStatistics balance={balance} cars={cars} />
-      <div>
-        <h1>PARKING COMPLEX</h1>
-        <SmallParkingLot cars={cars} />
-        <MediumParkingLot cars={cars} />
-        <LargeParkingLot cars={cars} />
+      <div className="parking-complex-wrapper">
+        <div className="parking-complex">
+          <h1>PARKING COMPLEX</h1>
+          <SmallParkingLot cars={cars} />
+          <MediumParkingLot cars={cars} />
+          <LargeParkingLot cars={cars} />
+        </div>
+
+        <ParkingStatistics balance={balance} cars={cars} />
       </div>
     </div>
   );

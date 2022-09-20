@@ -10,22 +10,25 @@ function Entrance() {
 
   const parkingSize = findParkingSize(cars, carType);
   const AddCar = () => {
-    setCars([
-      ...cars,
-      {
-        carType,
-        parkingNumber: uuidv4(),
-        timeIn: new Date(),
-        parkingSize: parkingSize,
-      },
-    ]);
+    if (parkingSize) {
+      setCars([
+        ...cars,
+        {
+          carType,
+          parkingNumber: uuidv4(),
+          timeIn: new Date(),
+          parkingSize: parkingSize,
+        },
+      ]);
+    }
   };
 
   return (
-    <div>
+    <div className="entrance-wrapper">
       <h4>Parking Entrance</h4>
-      <div>
+      <div className="cartype-wrapper">
         <select
+          className="cartype-select"
           defaultValue={smallCarType}
           onChange={(event) => {
             setCarType(event.target.value);
@@ -35,7 +38,9 @@ function Entrance() {
           <option value={mediumCarType}>Meddium</option>
           <option value={largeCarType}>Large</option>
         </select>
-        <button onClick={() => AddCar()}>Add Car</button>
+        <button className="add-car-btn" onClick={() => AddCar()}>
+          Add Car
+        </button>
       </div>
     </div>
   );

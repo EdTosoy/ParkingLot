@@ -1,0 +1,163 @@
+// parking entrance and exit points
+.entrance-container {
+  display: flex;
+  justify-content: space-around;
+  max-width: 100vw;
+  flex-wrap: wrap;
+}
+.entrance-wrapper {
+  border: 1px solid gray;
+  padding: 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  background-color: #e4dfc4;
+}
+
+.add-entrance-container {
+  text-align: center;
+}
+
+.add-entrance-btn {
+  padding: 0.8rem 2rem;
+  margin: 2rem;
+  border-radius: 1rem;
+  background-color: #f3d422;
+  font-weight: bold;
+  cursor: pointer;
+}
+.cartype-wrapper {
+  display: flex;
+  align-items: center;
+}
+.cartype-select {
+  margin-right: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid gray;
+  font-size: larger;
+}
+
+.add-car-btn {
+  padding: 0.3rem 0.5rem;
+  border: 1px solid rgb(207, 207, 207);
+  border-radius: 0.5rem;
+  background-color: #f3d422;
+}
+
+/// parking complex
+.small-parking-lot {
+  display: flex;
+  max-width: 60rem;
+  flex-wrap: wrap;
+}
+.small-car {
+  background-color: rgb(255, 117, 117);
+  width: 8rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  margin: 0.8rem;
+}
+.small-car p {
+  margin: 0.3rem;
+}
+
+.medium-parking-lot {
+  display: flex;
+  max-width: 60rem;
+  flex-wrap: wrap;
+}
+
+.medium-car {
+  background-color: rgb(124, 221, 232);
+  width: 8rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  margin: 0.8rem;
+}
+.medium-car p {
+  margin: 0.3rem;
+}
+
+.large-parking-lot {
+  display: flex;
+  max-width: 60rem;
+  flex-wrap: wrap;
+}
+
+.large-car {
+  background-color: rgb(228, 142, 211);
+  width: 8rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  margin: 0.8rem;
+}
+.large-car p {
+  margin: 0.3rem;
+}
+
+.remove-btn {
+  margin-bottom: 0.5rem;
+  border-radius: 0.3rem;
+  border: 1px solid gray;
+  padding: 0.3rem 0.5rem;
+  cursor: pointer;
+}
+
+.parking-complex-wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+
+.parking-complex {
+  flex-grow: 1;
+}
+
+.parking-info {
+  position: sticky;
+  top: 2rem;
+}
+.parking-statistics {
+  width: 20rem;
+  padding: 2rem;
+  border: 1px solid gray;
+  border-radius: 2rem;
+  background-color: #f0de78;
+}
+
+.parking-statistics h2 {
+  text-align: center;
+}
+
+//legends
+
+.legends {
+  border: 1px solid rgb(190, 190, 190);
+  padding: 2rem;
+  margin-top: 2rem;
+  border-radius: 0.3rem;
+
+  .grid {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin: 1rem 0;
+  }
+
+  .block-red {
+    background-color: rgb(255, 117, 117);
+    height: 1rem;
+    width: 1rem;
+  }
+  .block-cyan {
+    background-color: rgb(124, 221, 232);
+    height: 1rem;
+    width: 1rem;
+  }
+  .block-violet {
+    background-color: rgb(228, 142, 211);
+    height: 1rem;
+    width: 1rem;
+  }
+}

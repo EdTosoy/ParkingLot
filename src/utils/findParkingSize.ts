@@ -10,13 +10,13 @@ import { CarInfo } from "../types";
 
 export const findParkingSize = (cars: CarInfo[], carType: string) => {
   const isSmallParkingFull =
-    cars.filter((car) => car.carType === smallCarType).length >=
+    cars.filter((car) => car.parkingSize === smallCarType).length >=
     smallParkingLimit;
   const isMediumParkingFull =
-    cars.filter((car) => car.carType === mediumCarType).length >=
+    cars.filter((car) => car.parkingSize === mediumCarType).length >=
     mediumParkingLimit;
   const isLargeParkingFull =
-    cars.filter((car) => car.carType === largeCarType).length >=
+    cars.filter((car) => car.parkingSize === largeCarType).length >=
     largeParkingLimit;
 
   if (isSmallParkingFull && isMediumParkingFull && isLargeParkingFull)

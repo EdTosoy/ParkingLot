@@ -1,7 +1,9 @@
 import React from "react";
-import { largeCarType } from "../Constants";
+import { largeCarType, mediumCarType, smallCarType } from "../Constants";
 import { CarInfo } from "../types";
 import LargeCar from "./LargeCar";
+import MediumCar from "./MediumCar";
+import SmallCar from "./SmallCar";
 
 type LargeParkingLotProps = {
   cars: CarInfo[];
@@ -11,19 +13,35 @@ function LargeParkingLot({ cars }: LargeParkingLotProps) {
   return (
     <div>
       <h4>LARGE PARKING </h4>
-      {cars
-        .filter((car) => car.carType === largeCarType)
-        .map((car) => {
-          const { parkingNumber, parkingSize, timeIn } = car;
-          return (
-            <LargeCar
-              parkingNumber={parkingNumber}
-              key={parkingNumber}
-              timeIn={timeIn}
-              parkingSize={parkingSize}
-            />
-          );
-        })}
+      <div className="large-parking-lot">
+        {cars
+          .filter((car) => car.parkingSize === largeCarType)
+          .map((car) => {
+            const { parkingNumber, parkingSize, timeIn, carType } = car;
+            return carType === smallCarType ? (
+              <SmallCar
+                parkingNumber={parkingNumber}
+                key={parkingNumber}
+                timeIn={timeIn}
+                parkingSize={parkingSize}
+              />
+            ) : carType === mediumCarType ? (
+              <MediumCar
+                parkingNumber={parkingNumber}
+                key={parkingNumber}
+                timeIn={timeIn}
+                parkingSize={parkingSize}
+              />
+            ) : (
+              <LargeCar
+                parkingNumber={parkingNumber}
+                key={parkingNumber}
+                timeIn={timeIn}
+                parkingSize={parkingSize}
+              />
+            );
+          })}
+      </div>
     </div>
   );
 }

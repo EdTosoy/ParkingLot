@@ -6,11 +6,14 @@ export default function EntranceAndExitPoints() {
 
   return (
     <div>
-      <div>
+      <div className="entrance-container">
         {[...Array(numberOfEntrance)].map((_, index) => {
           return <Entrance key={index} />;
         })}
+      </div>
+      <div className="add-entrance-container">
         <button
+          className="add-entrance-btn"
           onClick={() => {
             setNumberOfEntrance((prevValue) => prevValue + 1);
           }}
