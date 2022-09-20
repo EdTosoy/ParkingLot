@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from "react";
+import "./App.css";
+import EntranceAndExitPoints from "./components/EntranceAndExitPoints";
+import LargeParkingLot from "./components/LargeParkingLot";
+import MediumParkingLot from "./components/MediumParkingLot";
+import ParkingStatistics from "./components/ParkingStatistics";
+import SmallParkingLot from "./components/SmallParkingLot";
+import { AppContext } from "./contextAPI/cars";
 
 function App() {
+  const { cars, balance } = useContext(AppContext);
+  console.log(cars);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <EntranceAndExitPoints />
+      <ParkingStatistics balance={balance} cars={cars} />
+      <div>
+        <h1>PARKING COMPLEX</h1>
+        <SmallParkingLot cars={cars} />
+        <MediumParkingLot cars={cars} />
+        <LargeParkingLot cars={cars} />
+      </div>
     </div>
   );
 }
