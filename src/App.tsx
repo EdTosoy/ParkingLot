@@ -1,15 +1,14 @@
 import React, { useContext } from "react";
-import "./App.scss";
 import EntranceAndExitPoints from "./components/EntranceAndExitPoints";
 import LargeParkingLot from "./components/LargeParkingLot";
 import MediumParkingLot from "./components/MediumParkingLot";
 import ParkingStatistics from "./components/ParkingStatistics";
 import SmallParkingLot from "./components/SmallParkingLot";
 import { AppContext } from "./contextAPI/cars";
+import "./App.scss";
 
 function App() {
   const { cars, balance } = useContext(AppContext);
-  console.log(cars);
   return (
     <div className="App">
       <EntranceAndExitPoints />

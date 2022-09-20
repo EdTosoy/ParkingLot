@@ -1,9 +1,9 @@
 import React from "react";
-import { largeCarType, mediumCarType, smallCarType } from "../Constants";
-import { CarInfo } from "../types";
 import LargeCar from "./LargeCar";
 import MediumCar from "./MediumCar";
 import SmallCar from "./SmallCar";
+import { largeCarType, mediumCarType, smallCarType } from "../Constants";
+import { CarInfo } from "../types";
 
 type LargeParkingLotProps = {
   cars: CarInfo[];

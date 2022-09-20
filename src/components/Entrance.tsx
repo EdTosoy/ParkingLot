@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
 import { AppContext } from "../contextAPI/cars";
 import { v4 as uuidv4 } from "uuid";
-import { largeCarType, mediumCarType, smallCarType } from "../Constants";
 import { findParkingSize } from "../utils/findParkingSize";
+import { largeCarType, mediumCarType, smallCarType } from "../Constants";
 
 function Entrance() {
   const { cars, setCars } = useContext(AppContext);
