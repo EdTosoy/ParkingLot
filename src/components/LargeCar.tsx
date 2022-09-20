@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { AppContext } from "../contextAPI/cars";
 import { format } from "date-fns";
-import { computeParkingFee } from "../utils/computeBillPayment";
+import { computeParkingFee } from "../utils/computeParkingFee";
 import { dateAndTimeFormat } from "../Constants";
 
 type LargeCarProps = {
