@@ -46,6 +46,14 @@
 }
 
 /// parking complex
+.parking-complex h1 {
+  color: white;
+}
+.parking-label {
+  background-color: white ;
+  padding: .5rem;
+  margin-right: 4rem;
+}
 .small-parking-lot {
   display: flex;
   max-width: 60rem;
@@ -138,6 +146,7 @@
   border: 1px solid rgb(190, 190, 190);
   padding: 2rem;
   margin-top: 2rem;
+  background-color: white;
   border-radius: 0.3rem;
 
   .grid {

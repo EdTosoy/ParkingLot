@@ -10,7 +10,7 @@ type SmallParkingLotProps = {
 export default function SmallParkingLot({ cars }: SmallParkingLotProps) {
   return (
     <div>
-      <h4>SMALL PARKING </h4>
+      <h4 className="parking-label">SMALL PARKING </h4>
       <div className="small-parking-lot">
         {cars
           .filter((car) => car.parkingSize === smallCarType)

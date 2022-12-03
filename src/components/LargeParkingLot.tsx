@@ -12,7 +12,7 @@ type LargeParkingLotProps = {
 function LargeParkingLot({ cars }: LargeParkingLotProps) {
   return (
     <div>
-      <h4>LARGE PARKING </h4>
+      <h4 className="parking-label">LARGE PARKING </h4>
       <div className="large-parking-lot">
         {cars
           .filter((car) => car.parkingSize === largeCarType)

@@ -16,3 +16,8 @@ a {
   transition: all 0.3s;
   box-sizing: border-box;
 }
+
+body {
+  background-image: url("./parkinglot.jpg");
+  background-size: cover;
+}
