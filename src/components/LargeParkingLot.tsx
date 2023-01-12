@@ -17,26 +17,26 @@ function LargeParkingLot({ cars }: LargeParkingLotProps) {
         {cars
           .filter((car) => car.parkingSize === largeCarType)
           .map((car) => {
-            const { parkingNumber, parkingSize, timeIn, carType } = car;
+            const { id, parkingSize, timeIn, carType } = car;
             return carType === smallCarType ? (
               <SmallCar
-                parkingNumber={parkingNumber}
-                key={parkingNumber}
-                timeIn={timeIn}
+                id={id}
+                key={id}
+                timeIn={timeIn?.toDate()}
                 parkingSize={parkingSize}
               />
             ) : carType === mediumCarType ? (
               <MediumCar
-                parkingNumber={parkingNumber}
-                key={parkingNumber}
-                timeIn={timeIn}
+                id={id}
+                key={id}
+                timeIn={timeIn?.toDate()}
                 parkingSize={parkingSize}
               />
             ) : (
               <LargeCar
-                parkingNumber={parkingNumber}
-                key={parkingNumber}
-                timeIn={timeIn}
+                id={id}
+                key={id}
+                timeIn={timeIn?.toDate()}
                 parkingSize={parkingSize}
               />
             );

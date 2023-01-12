@@ -16,19 +16,19 @@ export default function MediumParkingLot({ cars }: MediumParkingLotProps) {
         {cars
           .filter((car) => car.parkingSize === mediumCarType)
           .map((car) => {
-            const { parkingNumber, parkingSize, timeIn, carType } = car;
+            const { id, parkingSize, timeIn, carType } = car;
             return carType === smallCarType ? (
               <SmallCar
-                parkingNumber={parkingNumber}
-                key={parkingNumber}
-                timeIn={timeIn}
+                id={id}
+                key={id}
+                timeIn={timeIn?.toDate()}
                 parkingSize={parkingSize}
               />
             ) : (
               <MediumCar
-                parkingNumber={parkingNumber}
-                key={parkingNumber}
-                timeIn={timeIn}
+                id={id}
+                key={id}
+                timeIn={timeIn?.toDate()}
                 parkingSize={parkingSize}
               />
             );

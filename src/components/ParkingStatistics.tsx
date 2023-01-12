@@ -20,7 +20,7 @@ function ParkingStatistics({ balance, cars }: ParkingStatisticsProps) {
       <div className="parking-statistics">
         <div>
           <h2>Parking Statistics : </h2>
-          <div>Number of Cars:{cars.length}</div>
+          <div>Number of Cars Parked:{cars.length - 1}</div>
           <h3>Parking System Balance : {balance} </h3>
           <p>
             number of Small Vehicle:

@@ -15,12 +15,12 @@ export default function SmallParkingLot({ cars }: SmallParkingLotProps) {
         {cars
           .filter((car) => car.parkingSize === smallCarType)
           .map((car) => {
-            const { parkingNumber, parkingSize, timeIn } = car;
+            const { id, parkingSize, timeIn } = car;
             return (
               <SmallCar
-                parkingNumber={parkingNumber}
-                key={parkingNumber}
-                timeIn={timeIn}
+                id={id}
+                key={id}
+                timeIn={timeIn?.toDate()}
                 parkingSize={parkingSize}
               />
             );

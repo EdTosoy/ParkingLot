@@ -5,21 +5,13 @@ import { findParkingSize } from "../utils/findParkingSize";
 import { largeCarType, mediumCarType, smallCarType } from "../Constants";
 
 function Entrance() {
-  const { cars, setCars } = useContext(AppContext);
+  const { cars, setCars, addParking } = useContext(AppContext);
   const [carType, setCarType] = useState<string>(smallCarType);
 
   const parkingSize = findParkingSize(cars, carType);
   const AddCar = () => {
     if (parkingSize) {
-      setCars([
-        ...cars,
-        {
-          carType,
-          parkingNumber: uuidv4(),
-          timeIn: new Date(),
-          parkingSize: parkingSize,
-        },
-      ]);
+      addParking(carType, uuidv4(), parkingSize);
     }
   };
 

@@ -9,6 +9,7 @@ import "./App.scss";
 
 function App() {
   const { cars, balance } = useContext(AppContext);
+  console.log(cars);
   return (
     <div className="App">
       <EntranceAndExitPoints />

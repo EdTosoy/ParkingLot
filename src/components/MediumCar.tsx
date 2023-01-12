@@ -5,27 +5,23 @@ import { computeParkingFee } from "../utils/computeParkingFee";
 import { dateAndTimeFormat } from "../Constants";
 
 type MediumCarProps = {
-  parkingNumber: number;
+  id: string;
   timeIn: Date;
   parkingSize: string;
 };
 
-export default function MediumCar({
-  parkingNumber,
-  timeIn,
-  parkingSize,
-}: MediumCarProps) {
-  const { removeCar, balance, setBalance } = useContext(AppContext);
+export default function MediumCar({ id, timeIn, parkingSize }: MediumCarProps) {
+  const { removeCar, addBalance } = useContext(AppContext);
 
   return (
     <div className="medium-car">
       <p>Time in:</p>
-      <p>{format(new Date(timeIn), dateAndTimeFormat)}</p>
+      {timeIn && <p>{format(new Date(timeIn), dateAndTimeFormat)}</p>}
       <button
         className="remove-btn"
         onClick={() => {
-          removeCar(parkingNumber);
-          setBalance(balance + computeParkingFee(timeIn, parkingSize));
+          removeCar(id);
+          addBalance(computeParkingFee(timeIn, parkingSize));
         }}
       >
         Remove Car
